@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="chp58-67.js"></script>
+</head>
+<body>
+    <div>
+        <h1> DOM </h1>
+        <div id="form-content" class="content">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" />
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" />
+            <label for="email">Email</label>
+            <input type="text" id="email" />
+        </div>
+        <div id="main-content" class="content">
+            <p class="render">First Name : Alex</p>
+            <p class="render" id="lastName">Last Name: Bank</p>
+            <p class="render">Email : alexbank@example.com</p>
+            <p class="render">Country : Pakistan</p>
+            <p class="render">Contact : +92 300 1234567</p>
+        </div>
+
+        <div id="output"></div>
+    </div>
+    <p>i. The node type of the element with the id "form-content" is an HTMLDivElement. This is because it is a <div> element.</p>
+   <p>ii. The node type of the element with the id "lastName" is also an HTMLParagraphElement. Its child node would be a Text node containing the text "Last Name: Bank".</p>
+   <script>
+    // To update the child node of the element with the id "lastName"
+        var lastNameElement = document.getElementById("lastName");
+        lastNameElement.firstChild.nodeValue = "New Last Name: Updated";
+
+    //To get the first and last child of the element with the id "main-content"
+    var mainContentElement = document.getElementById("main-content");
+    var firstChild = mainContentElement.firstChild;
+    var lastChild = mainContentElement.lastChild;
+
+    //To get the next and previous siblings of the element with the id "lastName"
+    var lastNameElement = document.getElementById("lastName");
+    var nextSibling = lastNameElement.nextSibling;
+    var previousSibling = lastNameElement.previousSibling;
+    
+    //To get the parent node and node type of the element with the id "email"
+    var emailElement = document.getElementById("email");
+    var parentNode = emailElement.parentNode;
+    var nodeType = emailElement.nodeType;
+
+
+
+   </script>
+    </body>
+</html>
